@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miya | Web Designer</title>
+    <style>
+        :root {
+            --bg-main: #0a0a0c;
+            --bg-card: #121215;
+            --accent: #3b82f6;
+            --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --border: #1f2937;
+            --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font);
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 800px;
+            margin: 2rem 0 6rem 0;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 span {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+        }
+
+        /* Work Section */
+        .section-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .grid-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            letter-spacing: -0.02em;
+        }
+
+        .project-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .project-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .project-desc {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            margin-bottom: 2.5rem;
+            max-width: 650px;
+        }
+
+        /* Screenshot Grids */
+        .screenshot-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        /* Cafe Layout: 3 side-by-side screenshots */
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        /* Handyman Layout: 1 neat screenshot positioned nicely */
+        .grid-1 {
+            grid-template-columns: 1fr;
+            max-width: 700px; 
+        }
+
+        .ss-slot {
+            background: #1e1e24;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ss-slot::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, rgba(0,0,0,0) 70%);
+        }
+
+        .ss-slot span {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border: 1px dashed rgba(255,255,255,0.15);
+            padding: 0.75rem 1.25rem;
+            border-radius: 6px;
+            z-index: 1;
+            text-align: center;
+        }
+
+        /* Taller container for the single screenshot to look balanced */
+        .tall-slot {
+            height: 400px;
+        }
+
+        /* Footer styling */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 6rem 2rem 2rem 2rem;
+            text-align: center;
+            margin-top: 6rem;
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-email {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Responsive tweaks */
+        @media (max-width: 768px) {
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            .ss-slot {
+                height: 220px;
+            }
+            .tall-slot {
+                height: 280px;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- HEADER / INTRO -->
+        <section class="hero">
+            <h1>Hi, I'm Miya. I design beautiful websites that help your business <span>grow</span>.</h1>
+            <p>I build clean, modern websites for local businesses. Let us create a premium online space that welcomes your customers and gets results.</p>
+        </section>
+
+        <!-- PORTFOLIO SECTION -->
+        <section>
+            <p class="section-label">My Recent Work</p>
+            <h2 class="grid-title">Explore What I Do</h2>
+            
+            <!-- CAFE PROJECT (3 SCREENSHOTS) -->
+            <div class="project-block">
+                <h3 class="project-title">The Daily Grind Cafe</h3>
+                <p class="project-desc">A warm, inviting website designed for a boutique coffee shop to showcase their fresh menu, opening hours, and lovely space.</p>
+                
+                <div class="screenshot-grid grid-3">
+                    <div class="ss-slot">
+                        <span>[ Cafe Homepage Preview ]</span>
+                    </div>
+                    <div class="ss-slot">
+                        <span>[ Menu Layout Preview ]</span>
+                    </div>
+                    <div class="ss-slot">
+                        <span>[ Contact &amp; Location Preview ]</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HANDYMAN PROJECT (1 SCREENSHOT) -->
+            <div class="project-block">
+                <h3 class="project-title">FixIt Local Handyman</h3>
+                <p class="project-desc">A straightforward, professional website built to share local services clearly and make it simple for clients to get a quote.</p>
+                
+                <div class="screenshot-grid grid-1">
+                    <div class="ss-slot tall-slot">
+                        <span>[ Handyman Full Page Preview ]</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>Ready to start your new website?</p>
+            <a href="mailto:miya.richie45@gmail.com" class="footer-email">miya.richie45@gmail.com</a>
+        </footer>
+
+    </div>
+
+</body>
+</html>
