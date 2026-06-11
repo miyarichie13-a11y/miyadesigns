@@ -130,24 +130,10 @@
             overflow: hidden;
         }
 
-        .ss-slot::before {
-            content: '';
-            position: absolute;
-            width: 150%;
-            height: 150%;
-            background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, rgba(0,0,0,0) 70%);
-        }
-
-        .ss-slot span {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            border: 1px dashed rgba(255,255,255,0.15);
-            padding: 0.75rem 1.25rem;
-            border-radius: 6px;
-            z-index: 1;
-            text-align: center;
+        .ss-slot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* Taller container for the single screenshot to look balanced */
@@ -217,13 +203,13 @@
                 
                 <div class="screenshot-grid grid-3">
                     <div class="ss-slot">
-                        <span>[ Cafe Homepage Preview ]</span>
+                        <img src="cafe-home.jpg" alt="Cafe Homepage">
                     </div>
                     <div class="ss-slot">
-                        <span>[ Menu Layout Preview ]</span>
+                        <img src="cafe-menu.jpg" alt="Cafe Menu Layout">
                     </div>
                     <div class="ss-slot">
-                        <span>[ Contact &amp; Location Preview ]</span>
+                        <img src="cafe-contact.jpg" alt="Cafe Contact and Location Page">
                     </div>
                 </div>
             </div>
@@ -235,7 +221,7 @@
                 
                 <div class="screenshot-grid grid-1">
                     <div class="ss-slot tall-slot">
-                        <span>[ Handyman Full Page Preview ]</span>
+                        <img src="handyman-main.jpg" alt="Handyman Full Page Layout">
                     </div>
                 </div>
             </div>
